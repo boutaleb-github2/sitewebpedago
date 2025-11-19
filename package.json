@@ -1,0 +1,24 @@
+{
+  "name": "sitewebpedago",
+  "version": "1.0.0",
+  "description": "site web debutatif pour servir comme support de cours",
+  "homepage": "https://github.com/boutaleb-github2/sitewebpedago#readme",
+  "bugs": {
+    "url": "https://github.com/boutaleb-github2/sitewebpedago/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/boutaleb-github2/sitewebpedago.git"
+  },
+  "license": "ISC",
+  "author": "habib boutaleb",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
