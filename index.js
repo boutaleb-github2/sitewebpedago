@@ -21,9 +21,9 @@ function renderPage(title, content) {
         <h1>Mon site de cours</h1>
         <nav>
           <a href="/">Accueil</a>
-          <a href="/cours/javascript">Cours JavaScript</a>
-          <a href="/cours/react">Cours React</a>
-          <a href="/cours/physique">Cours Physique</a>
+          <a href="/cours/quantummecanics">Cours de Mécanique Quantique</a>
+          <a href="/cours/dielectricand magneticmaterials">Cours matériaux diélectriques et magnétiques</a>
+          <a href="/cours/opensourcesphysique">opensourcesphysique</a>
           <a href="/exercices">Exercices</a>
         </nav>
       </header>
@@ -33,7 +33,7 @@ function renderPage(title, content) {
       </main>
 
       <footer>
-        <p>Site pédagogique perso - Déployé sur Heroku</p>
+        <p>Site pédagogique perso - en cours de construction </p>
       </footer>
     </body>
     </html>
@@ -55,13 +55,13 @@ app.get('/', (req, res) => {
 });
 
 // Cours JavaScript
-app.get('/cours/javascript', (req, res) => {
+app.get('/cours/quantummecanics', (req, res) => {
   res.send(
     renderPage(
       'Cours JavaScript',
       `
-      <h2>Cours JavaScript</h2>
-      <p>JavaScript est un langage de programmation utilisé pour rendre les pages web interactives.</p>
+      <h2>Cours Mécanique quantique</h2>
+      <p>JMécanique quantique.</p>
       <h3>Exemple simple</h3>
       <pre><code>// Exemple
 function direBonjour() {
@@ -73,12 +73,12 @@ function direBonjour() {
 });
 
 // Cours React
-app.get('/cours/react', (req, res) => {
+app.get('/cours/dielectricandmagneticmaterials', (req, res) => {
   res.send(
     renderPage(
       'Cours React',
       `
-      <h2>Cours React (introduction)</h2>
+      <h2>Cours dielectricand magneticmaterials</h2>
       <p>React est une bibliothèque JavaScript pour construire des interfaces utilisateur.</p>
       <p>On travaille avec des composants et un état (state).</p>
       `
@@ -87,13 +87,13 @@ app.get('/cours/react', (req, res) => {
 });
 
 // Cours Physique
-app.get('/cours/physique', (req, res) => {
+app.get('/cours/opensourcesphysique', (req, res) => {
   res.send(
     renderPage(
       'Cours de Physique</h2>',
       `
       <h2>Cours de Physique</h2>
-      <p>Ici tu pourras mettre des rappels, des formules, des schémas (images plus tard).</p>
+      <p>opensourcesphysique.</p>
       `
     )
   );
