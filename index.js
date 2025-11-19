@@ -1,5 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
+app.use(express.static('public')); // <--- IMPORTANT pourque Express serve /public/style.css quand on met un <link> dans la page.
+
 
 // Heroku fournit le PORT dans process.env.PORT
 // en local on utilise 3000 par défaut
