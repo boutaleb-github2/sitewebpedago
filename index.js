@@ -64,7 +64,7 @@ app.get('/cours/quantummecanics', (req, res) => {
       <p>Mécanique quantique.</p>
       <h3>Cours en pptx :</h3>
 <iframe 
-  src="https://view.officeapps.live.com/op/embed.aspx?src=https://sitewebpedago-habib-boutaleb-f23d2b5f9cdd.herokuapp.com/quantummecanics"
+  src="https://view.officeapps.live.com/op/embed.aspx?src=https://sitewebpedago-habib-boutaleb-f23d2b5f9cdd.herokuapp.com/quantummecanics.pptx"
   width="100%" height="600px">
 </iframe>
       `
