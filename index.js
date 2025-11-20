@@ -22,7 +22,7 @@ function renderPage(title, content) {
         <nav>
           <a href="/">Accueil</a>
           <a href="/cours/quantummecanics">Cours de Mécanique Quantique</a>
-          <a href="/cours/dielectricand magneticmaterials">Cours matériaux diélectriques et magnétiques</a>
+          <a href="/cours/dielectricandmagneticmaterials">Cours matériaux diélectriques et magnétiques</a>
           <a href="/cours/opensourcesphysique">opensourcesphysique</a>
           <a href="/exercices">Exercices</a>
         </nav>
@@ -61,12 +61,9 @@ app.get('/cours/quantummecanics', (req, res) => {
       'Cours JavaScript',
       `
       <h2>Cours Mécanique quantique</h2>
-      <p>JMécanique quantique.</p>
-      <h3>Exemple simple</h3>
-      <pre><code>// Exemple
-function direBonjour() {
-  console.log("Bonjour !");
-}</code></pre>
+      <p>Mécanique quantique.</p>
+      <h3>Cours en pptx :</h3>
+<embed src="/quantummecanics.pptx" width="80%" height="600px" type="text/pptx">
       `
     )
   );
