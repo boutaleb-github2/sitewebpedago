@@ -150,10 +150,17 @@ app.get('/cours/quantummecanics', requireAuth,(req, res) => {
       <p>Mécanique quantique.</p>
       <a href="/logout">Déconnexion</a>
       <h3>Cours en pptx :</h3>
+    <!-- 
+    pour lire .doc, ppt,xls, on utilise view.officeapps...    
 <iframe 
   src="https://view.officeapps.live.com/op/embed.aspx?src=https://sitewebpedago-habib-boutaleb-f23d2b5f9cdd.herokuapp.com/quantummecanics.pdf"
   width="100%" height="600px">
 </iframe>
+    -->
+  <iframe 
+  src="/quantummecanics.pdf"
+  width="100%" height="600px">
+  </iframe>
       `
     )
   );
