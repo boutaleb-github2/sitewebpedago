@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Aide-mémoire JS – Module 2B (Fonctions avancées)</title>
+<style>
+body { font-family: Arial, sans-serif; max-width: 900px; margin: 20px auto; background: #f7f7f7; padding: 20px; line-height: 1.6; }
+h1, h2 { color: #1a3b5d; }
+code, pre { background: #eee; padding: 4px 6px; border-radius: 4px; }
+pre { padding: 10px; }
+.box { background: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #1a3b5d; }
+.tag { background: #1a3b5d; color: white; padding: 2px 8px; border-radius: 20px; font-size: 0.8em; }
+</style>
+</head>
+<body>
+
+<h1>Aide-mémoire JavaScript – Module 2B<br>Fonctions avancées</h1>
+
+<div class="box">
+<span class="tag">1</span>
+<h2>Le mot-clé this</h2>
+
+<h3>Dans un objet :</h3>
+<pre><code>const user = {
+  name: "Habib",
+  greet() {
+    console.log("Bonjour " + this.name);
+  }
+};</code></pre>
+
+<h3>Arrow functions et this</h3>
+<p>Les arrow functions n'ont <strong>pas</strong> de <code>this</code> personnel.</p>
+<pre><code>const obj = {
+  x: 10,
+  show: () => this.x   // undefined
+};</code></pre>
+</div>
+
+<div class="box">
+<span class="tag">2</span>
+<h2>Valeurs par défaut</h2>
+<pre><code>function multiply(a, b = 1) {
+  return a * b;
+}</code></pre>
+</div>
+
+<div class="box">
+<span class="tag">3</span>
+<h2>Paramètres rest</h2>
+<pre><code>function sum(...nums) {
+  return nums.reduce((acc, n) => acc + n, 0);
+}</code></pre>
+</div>
+
+<div class="box">
+<span class="tag">4</span>
+<h2>Hoisting</h2>
+<h3>Hoisted :</h3>
+<pre><code>hello(); // OK
+function hello() {}</code></pre>
+
+<h3>Non hoisted correctement :</h3>
+<pre><code>hello(); // Erreur
+const hello = function() {};</code></pre>
+</div>
+
+<div class="box">
+<span class="tag">5</span>
+<h2>Fonctions vs Méthodes</h2>
+<pre><code>function f() {}        // fonction
+const obj = { f() {} } // méthode</code></pre>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Aide-mémoire JavaScript – Module 1</title>
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 0 16px;
+      background: #f7f7f7;
+      color: #222;
+    }
+    h1, h2, h3 {
+      color: #1a3b5d;
+    }
+    code {
+      background: #eee;
+      padding: 2px 4px;
+      border-radius: 3px;
+      font-size: 0.95em;
+    }
+    pre {
+      background: #eee;
+      padding: 8px 10px;
+      border-radius: 4px;
+      overflow-x: auto;
+      font-size: 0.95em;
+    }
+    .box {
+      background: #ffffff;
+      padding: 12px 16px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      border-left: 4px solid #1a3b5d;
+    }
+    .tag {
+      display: inline-block;
+      background: #1a3b5d;
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.8em;
+      margin-bottom: 4px;
+    }
+    ul {
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Aide-mémoire JavaScript – Module 1</h1>
+  <p><strong>Objectif :</strong> se rappeler l’essentiel sur ce qu’est JavaScript, comment il s’exécute, les variables et les types de base.</p>
+
+  <div class="box">
+    <span class="tag">1. Rôle de JavaScript</span>
+    <h2>Qu’est-ce que JavaScript ?</h2>
+    <ul>
+      <li>Langage de programmation du <strong>web</strong>.</li>
+      <li>S’exécute :
+        <ul>
+          <li>dans le <strong>navigateur</strong> → rendre les pages <strong>interactives</strong>, gérer les formulaires, boutons, menus…</li>
+          <li>dans <strong>Node.js</strong> → côté serveur (back-end).</li>
+        </ul>
+      </li>
+      <li>Permet de :
+        <ul>
+          <li>modifier le contenu d’une page sans la recharger,</li>
+          <li>communiquer avec des API (envoyer/recevoir des données),</li>
+          <li>créer des applications complètes (React, etc.).</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <span class="tag">2. Exécution</span>
+    <h2>Comment JavaScript s’exécute ?</h2>
+    <ul>
+      <li>Le navigateur ou Node.js contient un <strong>moteur JS</strong> (ex. V8).</li>
+      <li>Le moteur lit ton code <strong>ligne par ligne</strong>.</li>
+      <li>Il utilise une <strong>pile d’exécution</strong> (call stack) :
+        <ul>
+          <li>Quand une fonction est appelée, elle est ajoutée en haut de la pile.</li>
+          <li>Une fois exécutée, elle est retirée de la pile.</li>
+        </ul>
+      </li>
+    </ul>
+    <pre><code>console.log("Hello");
+// 1. 'console.log' est placé dans la pile
+// 2. le message est affiché
+// 3. 'console.log' est retiré de la pile</code></pre>
+  </div>
+
+  <div class="box">
+    <span class="tag">3. Variables</span>
+    <h2>Variables : <code>let</code>, <code>const</code>, <code>var</code></h2>
+
+    <h3>Pourquoi des variables ?</h3>
+    <p>Pour <strong>stocker des informations</strong> : nom, âge, configuration, résultats de calculs, etc.</p>
+
+    <h3><code>const</code> (valeur qui ne change pas)</h3>
+    <ul>
+      <li>Pour les valeurs qui ne doivent pas être réassignées.</li>
+      <li>Très utilisé dans le code moderne.</li>
+    </ul>
+    <pre><code>const apiBaseUrl = "https://api.exemple.com";
+// apiBaseUrl = "https://autre-api.com"; // ❌ erreur</code></pre>
+
+    <h3><code>let</code> (valeur qui peut changer)</h3>
+    <ul>
+      <li>Pour les valeurs qui évoluent avec le temps.</li>
+    </ul>
+    <pre><code>let count = 0;
+count = count + 1;</code></pre>
+
+    <h3><code>var</code> (ancien, à éviter)</h3>
+    <ul>
+      <li>Gère mal les blocs (<code>if</code>, <code>for</code>…), provoque des comportements surprenants.</li>
+      <li>À connaître pour lire du vieux code, mais ne plus utiliser dans le nouveau.</li>
+    </ul>
+  </div>
+
+  <div class="box">
+    <span class="tag">4. Types de base</span>
+    <h2>Types de données essentiels</h2>
+
+    <h3>1) <code>number</code> – nombres</h3>
+    <pre><code>let age = 30;
+let price = 19.99;</code></pre>
+
+    <h3>2) <code>string</code> – texte</h3>
+    <ul>
+      <li>Très utilisé pour les messages, labels, champs de formulaires…</li>
+    </ul>
+    <pre><code>let name = "Habib";
+let message = "Bonjour " + name;
+let message2 = `Bonjour ${name}`; // template string</code></pre>
+
+    <h3>3) <code>boolean</code> – vrai / faux</h3>
+    <ul>
+      <li>Base de la logique : conditions, affichage, permissions…</li>
+    </ul>
+    <pre><code>let isLoggedIn = true;
+let isAdmin = false;</code></pre>
+
+    <h3>4) <code>undefined</code> vs <code>null</code></h3>
+    <ul>
+      <li><strong>undefined</strong> : aucune valeur définie (par défaut).</li>
+      <li><strong>null</strong> : on met <em>volontairement</em> “rien”.</li>
+    </ul>
+    <pre><code>let x;        // x est undefined
+let y = null; // y est "vide" volontairement</code></pre>
+
+    <h3>5) Aperçu des <code>object</code></h3>
+    <p>Très important en programmation web (représenter un utilisateur, un produit, un message, etc.).</p>
+    <pre><code>const user = {
+  name: "Habib",
+  age: 50,
+  isAdmin: false
+};</code></pre>
+  </div>
+
+  <div class="box">
+    <span class="tag">5. Erreurs</span>
+    <h2>Erreurs courantes</h2>
+    <ul>
+      <li>JavaScript affiche des messages d’erreur dans la <strong>console</strong> du navigateur.</li>
+      <li>Lire le message aide beaucoup pour comprendre ce qui ne va pas.</li>
+    </ul>
+    <pre><code>console.log(nom);
+// ReferenceError: nom is not defined
+// → la variable 'nom' n'existe pas</code></pre>
+  </div>
+
+  <div class="box">
+    <span class="tag">6. En résumé</span>
+    <h2>Résumé rapide du Module 1</h2>
+    <ul>
+      <li>JS = langage pour rendre le web <strong>interactif</strong>.</li>
+      <li>Le code s’exécute dans un <strong>moteur JS</strong> (navigateur ou Node.js) avec une <strong>pile d’exécution</strong>.</li>
+      <li><code>const</code> : valeur fixe, <code>let</code> : valeur qui change, <code>var</code> : ancien, à éviter.</li>
+      <li>Types essentiels :
+        <ul>
+          <li><code>number</code>, <code>string</code>, <code>boolean</code>, <code>undefined</code>, <code>null</code>, <code>object</code>.</li>
+        </ul>
+      </li>
+      <li>Lire les <strong>messages d’erreur</strong> dans la console est une compétence importante.</li>
+    </ul>
+  </div>
+</body>
+</html>

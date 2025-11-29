@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Aide-mémoire JS – Module 2C (Return)</title>
+<style>
+body { font-family: Arial, sans-serif; max-width: 900px; margin: 20px auto; background: #f7f7f7; padding: 20px; line-height: 1.6; }
+h1, h2 { color: #1a3b5d; }
+code, pre { background: #eee; padding: 4px 6px; border-radius: 4px; }
+pre { padding: 10px; }
+.box { background: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #1a3b5d; }
+.tag { background: #1a3b5d; color: white; padding: 2px 8px; border-radius: 20px; font-size: 0.8em; }
+</style>
+</head>
+<body>
+
+<h1>Aide-mémoire JavaScript – Module 2C<br>Le mot-clé <code>return</code></h1>
+
+<div class="box">
+<span class="tag">1</span>
+<h2>Retour explicite</h2>
+<pre><code>function double(n) {
+  return n * 2;
+}</code></pre>
+</div>
+
+<div class="box">
+<span class="tag">2</span>
+<h2>Retour implicite (arrow)</h2>
+
+<h3>Fonctionne :</h3>
+<pre><code>const add = (a, b) => a + b;</code></pre>
+
+<h3>Ne fonctionne pas :</h3>
+<pre><code>const add = (a, b) => { a + b };  // undefined</code></pre>
+</div>
+
+<div class="box">
+<span class="tag">3</span>
+<h2>Retour d’un objet (cas spécial)</h2>
+<h3>Correct :</h3>
+<pre><code>const getUser = () => ({ name: "Habib" });</code></pre>
+
+<h3>Incorrect :</h3>
+<pre><code>const getUser = () => { name: "Habib" }; // bloc vide → undefined</code></pre>
+</div>
+
+<div class="box">
+<span class="tag">4</span>
+<h2>return dans les callbacks</h2>
+
+<h3>map → retourne une nouvelle valeur</h3>
+<pre><code>users.map(u => u.name);</code></pre>
+
+<h3>filter → retourne true/false</h3>
+<pre><code>users.filter(u => u.age >= 18);</code></pre>
+
+<h3>find → retourne un élément</h3>
+<pre><code>users.find(u => u.id === 1);</code></pre>
+
+<h3>sort → retourne comparaison</h3>
+<pre><code>numbers.sort((a, b) => a - b);</code></pre>
+</div>
+
+<div class="box">
+<span class="tag">5</span>
+<h2>return dans une fonction async</h2>
+<p>Retourne toujours une <strong>Promise</strong>.</p>
+<pre><code>async function getUser() {
+  return { name: "Habib" }; // → Promise.resolve(...)
+}</code></pre>
+</div>
+
+<div class="box">
+<span class="tag">6</span>
+<h2>return dans les closures</h2>
+<pre><code>function createCounter() {
+  let count = 0;
+  return function() {
+    count++;
+    return count;
+  };
+}</code></pre>
+</div>
+
+</body>
+</html>

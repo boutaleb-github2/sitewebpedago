@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Aide-mémoire JS – Module 2A (Fonctions)</title>
+<style>
+body { font-family: Arial, sans-serif; max-width: 900px; margin: 20px auto; background: #f7f7f7; padding: 20px; line-height: 1.6; }
+h1, h2 { color: #1a3b5d; }
+code, pre { background: #eee; padding: 4px 6px; border-radius: 4px; }
+pre { padding: 10px; }
+.box { background: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; border-left: 4px solid #1a3b5d; }
+.tag { background: #1a3b5d; color: white; padding: 2px 8px; border-radius: 20px; font-size: 0.8em; }
+</style>
+</head>
+<body>
+
+<h1>Aide-mémoire JavaScript – Module 2A<br>Les Fonctions (bases)</h1>
+
+<div class="box">
+<span class="tag">1</span>
+<h2>Pourquoi les fonctions ?</h2>
+<ul>
+  <li>Réutiliser du code.</li>
+  <li>Organiser la logique (propreté du code).</li>
+  <li>Réagir aux événements (clics, formulaires).</li>
+  <li>Manipuler des données (API, tableaux).</li>
+</ul>
+</div>
+
+<div class="box">
+<span class="tag">2</span>
+<h2>Les trois syntaxes de fonction</h2>
+
+<h3>1) Déclaration classique</h3>
+<pre><code>function hello() {
+  console.log("Salut !");
+}</code></pre>
+
+<h3>2) Fonction expression</h3>
+<pre><code>const hello = function() {
+  console.log("Salut !");
+};</code></pre>
+
+<h3>3) Fonction fléchée</h3>
+<pre><code>const hello = () => {
+  console.log("Salut !");
+};</code></pre>
+
+<p><strong>Résumé :</strong><br>
+Déclaration = hoisting.<br>
+Expression = plus moderne.<br>
+Arrow = concise, idéale pour callbacks.</p>
+</div>
+
+<div class="box">
+<span class="tag">3</span>
+<h2>Paramètres et arguments</h2>
+<pre><code>function greet(name) {   // paramètre
+  console.log("Bonjour " + name);
+}
+
+greet("Habib");          // argument</code></pre>
+</div>
+
+<div class="box">
+<span class="tag">4</span>
+<h2>return (bases)</h2>
+<p>Retourne une valeur et stoppe l'exécution de la fonction.</p>
+<pre><code>function double(n) {
+  return n * 2;
+}</code></pre>
+</div>
+
+<div class="box">
+<span class="tag">5</span>
+<h2>Fonctions dans le web</h2>
+
+<h3>Validation</h3>
+<pre><code>function isEmail(email) {
+  return email.includes("@");
+}</code></pre>
+
+<h3>Événements</h3>
+<pre><code>button.addEventListener("click", () => {
+  console.log("Clic !");
+});</code></pre>
+
+<h3>Transformations</h3>
+<pre><code>const names = users.map(user => user.name);</code></pre>
+
+</div>
+
+</body>
+</html>
