@@ -46,7 +46,7 @@ function renderPage(title, content) {
         <nav>
           <a href="/">Accueil</a>
           <a href="/cours/quantummecanics">Cours de Mécanique Quantique</a>
-          <a href="/cours/dielectricandmagneticmaterials">Cours matériaux diélectriques et magnétiques</a>
+          <a href="/cours/opticalpropertiesofmaterials">Optical properties of materials</a>
           <a href="/cours/opensourcesphysique">opensourcesphysique</a>
           <a href="/exercices">Exercices</a>
            <a href="/logout">Déconnexion</a>
@@ -167,14 +167,21 @@ app.get('/cours/quantummecanics', requireAuth,(req, res) => {
 });
 
 // Cours React
-app.get('/cours/dielectricandmagneticmaterials', (req, res) => {
+app.get('/cours/opticalpropertiesofmaterials', (req, res) => {
   res.send(
     renderPage(
-      'Cours React',
+      'Cours propriétés optiques des matériaux',
       `
-      <h2>Cours dielectricand magneticmaterials</h2>
-      <p>React est une bibliothèque JavaScript pour construire des interfaces utilisateur.</p>
-      <p>On travaille avec des composants et un état (state).</p>
+      <h2>Cours propriétés optiques des matériaux</h2>
+      <p>Ce cours traite de la réponse optique des matériaux (métaux, semi-conducteurs, isolants) à un champ électromagnétique. Il relie les grandeurs mesurables (réflectance, absorption, indice) à la structure électronique, aux porteurs libres, aux phonons et aux défauts, et présente les principales méthodes de caractérisation optique</p>   
+      
+       <a href="/logout">Déconnexion</a>
+      <h3>Cours en pdf : </h3>
+      <iframe 
+  src="/proprietesOptiquesDesMateriaux_S2_22fevrier2026.pdf"
+  width="100%" height="600px">
+  </iframe>
+      
       `
     )
   );
